@@ -202,6 +202,29 @@
             </ul>
           </div>
         </article>
+
+        <article class="exp-card">
+          <div class="exp-card__media">
+            <img src="images/screenshots/Minecraft_iMod_JLC.svg" alt="JLC Duper Fabric mod for Minecraft 26.2" loading="lazy" decoding="async" />
+          </div>
+          <div class="exp-card__body">
+            <span class="exp-card__badge">Java Modding</span>
+            <h3 class="exp-card__title">JLC Duper</h3>
+            <p class="exp-card__subtitle">Fabric Mod for Minecraft 26.2</p>
+            <p>
+              A late-game machine capable of duplicating items, powered by the Ender Dragon's
+              Heart. Features a custom GUI, animated progress, custom textures, and the
+              'Double or Nothing' advancement.
+            </p>
+            <ul class="exp-card__tags">
+              <li>Java</li>
+              <li>Fabric</li>
+              <li>Minecraft</li>
+              <li>Game Dev</li>
+            </ul>
+            <a class="btn btn--ghost exp-card__cta" href="https://github.com/justinecancio06-hub/jlc-duper-mod" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
+        </article>
       </div>
     </div>
   </main>
