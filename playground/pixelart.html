@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pixel Art Editor — paint retro 16×16 pixel art and export as a scaled PNG." />
+  <title>Pixel Art Editor — Justine Cancio</title>
+  <link rel="icon" href="../images/profile/Picture-Cancio.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var theme = localStorage.getItem('theme');
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.classList.toggle('dark-theme', theme === 'dark');
+      document.documentElement.classList.toggle('light-theme', theme === 'light');
+    })();
+  </script>
+  <link rel="stylesheet" href="../vendor/pickr/monolith.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="tool-page">
+  <header class="tool-header">
+    <div class="container tool-header__inner">
+      <a class="nav__brand" href="../index.html">JC<span class="nav__brand-dot">.</span></a>
+      <a class="btn btn--ghost tool-back" href="../projects.html#tools">&larr; Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main class="tool-main">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="section__tag">Playground</span>
+        <h1 class="section__title">Pixel Art Editor</h1>
+        <p class="playground__lead">Paint retro 16&times;16 pixel art. No pressure.</p>
+      </div>
+
+      <div class="sketch-card pixel-card">
+        <div class="pixel-card__pad">
+          <canvas class="pixel-canvas" id="pixelCanvas" width="480" height="480" aria-label="Pixel art grid — 16 by 16"></canvas>
+        </div>
+
+        <div class="sketch-toolbar pixel-toolbar" role="group" aria-label="Pixel art tools">
+          <div class="sketch-toolbar__group" role="group" aria-label="Tool">
+            <button class="pixel-tool sketch-tool tool-icon is-active" type="button" data-tool="pencil" aria-label="Pencil tool" aria-pressed="true" title="Pencil tool">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="20" height="20"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </button>
+            <button class="pixel-tool sketch-tool tool-icon" type="button" data-tool="eraser" aria-label="Eraser tool" aria-pressed="false" title="Eraser tool">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="20" height="20"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/></svg>
+            </button>
+            <button class="pixel-tool sketch-tool tool-icon" type="button" data-tool="fill" aria-label="Fill tool" aria-pressed="false" title="Fill tool">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="20" height="20"><path d="m19 11-8-8-8.6 8.6a2 2 0 0 0 0 2.8l5.2 5.2c.8.8 2 .8 2.8 0L19 11Z"/><path d="m5 2 5 5"/><path d="M2 13h15"/><path d="M22 20a2 2 0 1 1-4 0c0-1.6 1.7-2.4 2-4 .3 1.6 2 2.4 2 4Z"/></svg>
+            </button>
+            <button class="pixel-tool sketch-tool tool-icon" type="button" data-tool="eyedropper" aria-label="Eyedropper tool" aria-pressed="false" title="Eyedropper tool">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="20" height="20"><path d="m2 22 1-1h3l9-9"/><path d="M3 21v-3l9-9"/><path d="m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.9.9a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3l.9.9Z"/></svg>
+            </button>
+          </div>
+
+          <div class="sketch-toolbar__group pixel-color" role="group" aria-label="Color">
+            <button class="pixel-swatch is-active" type="button" data-color="#000000" style="--swatch:#000000" aria-label="Color: black (#000000)" aria-pressed="true"></button>
+            <button class="pixel-swatch" type="button" data-color="#FFFFFF" style="--swatch:#FFFFFF" aria-label="Color: white (#FFFFFF)" aria-pressed="false"></button>
+            <button class="pixel-swatch" type="button" data-color="#808080" style="--swatch:#808080" aria-label="Color: gray (#808080)" aria-pressed="false"></button>
+            <button class="pixel-swatch" type="button" data-color="#FF0000" style="--swatch:#FF0000" aria-label="Color: red (#FF0000)" aria-pressed="false"></button>
+            <button class="pixel-swatch" type="button" data-color="#FF8C00" style="--swatch:#FF8C00" aria-label="Color: orange (#FF8C00)" aria-pressed="false"></button>
+            <button class="pixel-swatch" type="button" data-color="#FFD700" style="--swatch:#FFD700" aria-label="Color: yellow (#FFD700)" aria-pressed="false"></button>
+            <button class="pixel-swatch" type="button" data-color="#008000" style="--swatch:#008000" aria-label="Color: green (#008000)" aria-pressed="false"></button>
+            <button class="pixel-swatch" type="button" data-color="#00FF00" style="--swatch:#00FF00" aria-label="Color: lime (#00FF00)" aria-pressed="false"></button>
+            <button class="pixel-swatch" type="button" data-color="#008080" style="--swatch:#008080" aria-label="Color: teal (#008080)" aria-pressed="false"></button>
+            <button class="pixel-swatch" type="button" data-color="#0000FF" style="--swatch:#0000FF" aria-label="Color: blue (#0000FF)" aria-pressed="false"></button>
+            <button class="pixel-swatch" type="button" data-color="#800080" style="--swatch:#800080" aria-label="Color: purple (#800080)" aria-pressed="false"></button>
+            <button class="pixel-swatch" type="button" data-color="#FF69B4" style="--swatch:#FF69B4" aria-label="Color: pink (#FF69B4)" aria-pressed="false"></button>
+            <button class="pixel-swatch" type="button" data-color="#8B4513" style="--swatch:#8B4513" aria-label="Color: brown (#8B4513)" aria-pressed="false"></button>
+            <button class="pixel-swatch" type="button" data-color="#D2B48C" style="--swatch:#D2B48C" aria-label="Color: tan (#D2B48C)" aria-pressed="false"></button>
+            <button class="pixel-swatch" type="button" data-color="#000080" style="--swatch:#000080" aria-label="Color: navy (#000080)" aria-pressed="false"></button>
+            <button class="pixel-swatch" type="button" data-color="#8B0000" style="--swatch:#8B0000" aria-label="Color: dark red (#8B0000)" aria-pressed="false"></button>
+            <span class="pixel-current" id="pixelCurrent" style="--pixel-current:#000000" aria-hidden="true"></span>
+            <span class="sketch-custom pixel-custom" id="pixelCustomWrap">
+              <span id="pixelCustomPickr"></span>
+            </span>
+          </div>
+
+          <div class="sketch-toolbar__group sketch-toolbar__group--end">
+            <button class="btn btn--ghost sketch-action sketch-undo tool-icon" type="button" id="pixelUndo" aria-label="Undo" title="Undo" aria-disabled="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="20" height="20"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5a5.5 5.5 0 0 1-5.5 5.5H11"/></svg>
+            </button>
+            <button class="btn btn--ghost sketch-action" type="button" id="pixelClear">Clear</button>
+            <button class="btn btn--primary sketch-action" type="button" id="pixelSave">Save PNG</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script defer src="../vendor/pickr/pickr.min.js"></script>
+  <script defer src="../js/pixelart.js"></script>
+</body>
+</html>

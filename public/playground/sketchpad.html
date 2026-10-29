@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sketch Pad — draw freely with pen, eraser, and bucket tools." />
+  <title>Sketch Pad — Justine Cancio</title>
+  <link rel="icon" href="../images/profile/Picture-Cancio.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <script>
+    (function () {
+      var theme = localStorage.getItem('theme');
+      if (theme !== 'light' && theme !== 'dark') {
+        theme = 'dark';
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+      document.documentElement.classList.toggle('dark-theme', theme === 'dark');
+      document.documentElement.classList.toggle('light-theme', theme === 'light');
+    })();
+  </script>
+  <link rel="stylesheet" href="../vendor/pickr/monolith.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body class="tool-page">
+  <header class="tool-header">
+    <div class="container tool-header__inner">
+      <a class="nav__brand" href="../index.html">JC<span class="nav__brand-dot">.</span></a>
+      <a class="btn btn--ghost tool-back" href="../projects.html#tools">&larr; Back to Portfolio</a>
+    </div>
+  </header>
+
+  <main class="tool-main">
+    <div class="container">
+      <div class="section__head section__head--center">
+        <span class="section__tag">Playground</span>
+        <h1 class="section__title">Sketch Pad</h1>
+        <p class="playground__lead">Draw something. No pressure.</p>
+      </div>
+
+      <div class="sketch-card">
+        <div class="sketch-card__pad">
+          <canvas class="sketch-canvas" id="sketchCanvas" aria-label="Sketch pad — draw here"></canvas>
+          <span class="sketch-timer" id="sketchTimer" aria-hidden="true" hidden>⏱ 03:00</span>
+          <div class="sketch-overlay" id="sketchOverlay" role="alert" hidden>
+            <p class="sketch-overlay__title">⏱ Time's up! ✨</p>
+            <button class="btn btn--primary sketch-overlay__btn" type="button" id="sketchRestart">Restart Challenge</button>
+          </div>
+        </div>
+
+        <div class="sketch-toolbar" role="group" aria-label="Sketch tools">
+          <div class="sketch-toolbar__group" role="group" aria-label="Tool">
+            <button class="sketch-tool tool-icon is-active" type="button" data-tool="pen" aria-label="Pen tool" aria-pressed="true" title="Pen tool">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="20" height="20"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+            </button>
+            <button class="sketch-tool tool-icon" type="button" data-tool="eraser" aria-label="Eraser tool" aria-pressed="false" title="Eraser tool">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="20" height="20"><path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/><path d="M22 21H7"/><path d="m5 11 9 9"/></svg>
+            </button>
+            <button class="sketch-tool tool-icon" type="button" data-tool="bucket" aria-label="Paint bucket tool" aria-pressed="false" title="Paint bucket tool">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="20" height="20"><path d="m19 11-8-8-8.6 8.6a2 2 0 0 0 0 2.8l5.2 5.2c.8.8 2 .8 2.8 0L19 11Z"/><path d="m5 2 5 5"/><path d="M2 13h15"/><path d="M22 20a2 2 0 1 1-4 0c0-1.6 1.7-2.4 2-4 .3 1.6 2 2.4 2 4Z"/></svg>
+            </button>
+            <button class="sketch-tool tool-icon" type="button" data-tool="eyedropper" aria-label="Eyedropper tool" aria-pressed="false" title="Eyedropper tool">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" width="20" height="20"><path d="m2 22 1-1h3l9-9"/><path d="M3 21v-3l9-9"/><path d="m15 6 3.4-3.4a2.1 2.1 0 1 1 3 3L18 9l.9.9a2.1 2.1 0 1 1-3 3l-3.8-3.8a2.1 2.1 0 1 1 3-3l.9.9Z"/></svg>
+            </button>
+          </div>
+
+          <div class="sketch-toolbar__group sketch-color" role="group" aria-label="Color">
+            <button class="sketch-swatch is-active" type="button" data-color="#1A1A1A" style="--swatch:#1A1A1A" aria-label="Color: black" aria-pressed="true"></button>
+            <button class="sketch-swatch" type="button" data-color="#ff5722" style="--swatch:#ff5722" aria-label="Color: orange" aria-pressed="false"></button>
+            <button class="sketch-swatch" type="button" data-color="#a855f7" style="--swatch:#a855f7" aria-label="Color: purple" aria-pressed="false"></button>
+            <button class="sketch-swatch" type="button" data-color="#ec4899" style="--swatch:#ec4899" aria-label="Color: pink" aria-pressed="false"></button>
+            <button class="sketch-swatch" type="button" data-color="#06b6d4" style="--swatch:#06b6d4" aria-label="Color: teal" aria-pressed="false"></button>
+            <span class="sketch-custom" id="sketchCustomWrap">
+              <span id="sketchCustomPickr"></span>
+            </span>
+          </div>
+
+          <div class="sketch-toolbar__group sketch-brush" role="group" aria-label="Brush size">
+            <input class="sketch-brush__range" type="range" id="sketchSize" min="1" max="10" step="1" value="5" aria-label="Brush size" />
+            <span class="sketch-brush__label" id="sketchSizeLabel">Size: 5</span>
+          </div>
+
+          <div class="sketch-toolbar__group sketch-opacity" role="group" aria-label="Opacity">
+            <input class="sketch-opacity__range" type="range" id="sketchOpacity" min="0.1" max="1" step="0.05" value="1" aria-label="Brush opacity" />
+            <span class="sketch-opacity__label" id="sketchOpacityLabel">Opacity: 100%</span>
+          </div>
+
+          <div class="sketch-toolbar__group sketch-toolbar__group--end">
+            <button class="sketch-tool" type="button" id="sketchChallenge">⏱ Challenge</button>
+            <button class="btn btn--ghost sketch-action" type="button" id="sketchClear">Clear</button>
+            <button class="btn btn--primary sketch-action" type="button" id="sketchSave">Save PNG</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script defer src="../vendor/pickr/pickr.min.js"></script>
+  <script defer src="../js/sketchpad.js"></script>
+</body>
+</html>
