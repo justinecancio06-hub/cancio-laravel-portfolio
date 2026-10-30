@@ -57,6 +57,7 @@
 
   <main id="main" class="projects-page">
     <div class="container">
+      <a class="btn btn--ghost back-home-btn" href="{{ url('/') }}">&larr; Back</a>
       <div class="section__head section__head--center projects__head">
         <span class="section__tag">Portfolio</span>
         <h1 class="section__title">All Projects</h1>
@@ -108,6 +109,7 @@
               <li>CSS</li>
               <li>JavaScript</li>
             </ul>
+            <a class="btn btn--ghost exp-card__cta" href="https://jefrey-kristine-wedding-rsvp.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Site →</a>
           </div>
         </article>
 
@@ -134,6 +136,7 @@
               <li>CSS</li>
               <li>JavaScript</li>
             </ul>
+            <a class="btn btn--ghost exp-card__cta" href="https://bangued-ka-fuel.infinityfree.me/" target="_blank" rel="noopener noreferrer">View Live Site →</a>
           </div>
         </article>
 
@@ -178,6 +181,7 @@
               <li>HTML</li>
               <li>CSS</li>
             </ul>
+            <a class="btn btn--ghost exp-card__cta" href="playground/sketchpad.html">Launch Tool →</a>
           </div>
         </article>
 
@@ -200,6 +204,7 @@
               <li>Canvas API</li>
               <li>CSS Grid</li>
             </ul>
+            <a class="btn btn--ghost exp-card__cta" href="playground/pixelart.html">Launch Tool →</a>
           </div>
         </article>
 
@@ -223,6 +228,28 @@
               <li>Game Dev</li>
             </ul>
             <a class="btn btn--ghost exp-card__cta" href="https://github.com/justinecancio06-hub/jlc-duper-mod" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-card__media">
+            <img src="images/screenshots/whitney-portfolio.png" alt="Whitney Tulan Portfolio website preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="exp-card__body">
+            <span class="exp-card__badge">Client Project</span>
+            <h3 class="exp-card__title">Whitney Tulan Portfolio</h3>
+            <p class="exp-card__subtitle">Civil Engineer Portfolio Website</p>
+            <p>
+              A clean, modern portfolio website designed and developed for a Civil Engineer. Built with a
+              focus on readability, clean typography, and a smooth user experience.
+            </p>
+            <ul class="exp-card__tags">
+              <li>Web Design</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a class="btn btn--ghost exp-card__cta" href="https://whitney-tulan-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Site →</a>
           </div>
         </article>
       </div>

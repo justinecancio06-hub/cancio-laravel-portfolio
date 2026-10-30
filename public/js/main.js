@@ -447,6 +447,47 @@
     }, { passive: true });
   }
 
+  /* ---------- Home scroll memory / Back button ---------- */
+  var HOME_SCROLL_KEY = 'homeScrollY';
+  var RESTORE_HOME_KEY = 'restoreHomeScroll';
+  var isHomePage = window.location.pathname === '/' || window.location.pathname === '/index.php';
+
+  if (isHomePage) {
+    var restorePending = false;
+    try { restorePending = sessionStorage.getItem(RESTORE_HOME_KEY) === '1'; } catch (e) {}
+
+    if (restorePending) {
+      var savedY = 0;
+      try { savedY = parseInt(sessionStorage.getItem(HOME_SCROLL_KEY), 10) || 0; } catch (e) {}
+      try { sessionStorage.removeItem(RESTORE_HOME_KEY); } catch (e) {}
+
+      var restoreHomeScroll = function () {
+        window.scrollTo(0, savedY);
+      };
+
+      window.addEventListener('load', restoreHomeScroll);
+      restoreHomeScroll();
+      requestAnimationFrame(function () {
+        requestAnimationFrame(restoreHomeScroll);
+      });
+    }
+
+    window.addEventListener('scroll', function () {
+      try { sessionStorage.setItem(HOME_SCROLL_KEY, String(window.scrollY)); } catch (e) {}
+    }, { passive: true });
+  }
+
+  var backHomeBtn = document.querySelector('.back-home-btn');
+  if (backHomeBtn) {
+    backHomeBtn.addEventListener('click', function () {
+      try {
+        if (sessionStorage.getItem(HOME_SCROLL_KEY) !== null) {
+          sessionStorage.setItem(RESTORE_HOME_KEY, '1');
+        }
+      } catch (e) {}
+    });
+  }
+
   /* ---------- Active nav section highlight ---------- */
   var sectionLinks = Array.prototype.filter.call(
     document.querySelectorAll('.nav__list a[href^="#"]'),

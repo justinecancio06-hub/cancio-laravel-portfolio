@@ -58,6 +58,7 @@
   <main id="main">
     <section class="section gallery gallery-page" id="gallery">
       <div class="container">
+        <a class="btn btn--ghost back-home-btn" href="{{ url('/') }}">&larr; Back</a>
         <div class="section__head section__head--center">
           <span class="section__tag">Portfolio</span>
           <h1 class="section__title">Selected Work</h1>

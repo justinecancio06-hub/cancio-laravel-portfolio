@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 90" role="img" aria-label="Minecraft mod placeholder">
+  <rect width="160" height="90" fill="#1e293b"/>
+  <rect x="40" y="26" width="80" height="38" fill="#7c5a3a"/>
+  <rect x="40" y="26" width="80" height="10" fill="#5aa64a"/>
+  <text x="80" y="78" fill="#94a3b8" font-family="monospace" font-size="8" text-anchor="middle">minecraft_mod.png</text>
+</svg>
