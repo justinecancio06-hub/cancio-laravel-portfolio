@@ -233,6 +233,27 @@
 
         <article class="exp-card">
           <div class="exp-card__media">
+            <img src="images/screenshots/Minecraft_iMod_JLC.svg" alt="Aether Dimension Fabric mod for Minecraft 26.1" loading="lazy" decoding="async" />
+          </div>
+          <div class="exp-card__body">
+            <span class="exp-card__badge">In Development</span>
+            <h3 class="exp-card__title">Aether Dimension</h3>
+            <p class="exp-card__subtitle">Fabric Mod for Minecraft 26.1</p>
+            <p>
+              An under-development Fabric mod that adds a brand new Aether dimension. Features a custom Glowstone portal system, a fixed daytime sky, and new items like the Spectro and Prismarine X Shard.
+            </p>
+            <ul class="exp-card__tags">
+              <li>Java</li>
+              <li>Fabric</li>
+              <li>Minecraft</li>
+              <li>Game Dev</li>
+            </ul>
+            <a class="btn btn--ghost exp-card__cta" href="https://github.com/justinecancio06-hub/Aether-Dimension-Cancio" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+          </div>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-card__media">
             <img src="images/screenshots/whitney-portfolio.png" alt="Whitney Tulan Portfolio website preview" loading="lazy" decoding="async" />
           </div>
           <div class="exp-card__body">
@@ -250,6 +271,28 @@
               <li>JavaScript</li>
             </ul>
             <a class="btn btn--ghost exp-card__cta" href="https://whitney-tulan-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Site →</a>
+          </div>
+        </article>
+
+        <article class="exp-card">
+          <div class="exp-card__media">
+            <img src="images/screenshots/marvin-portfolio.png" alt="Marvin Constantino Portfolio website preview" loading="lazy" decoding="async" />
+          </div>
+          <div class="exp-card__body">
+            <span class="exp-card__badge">Client Project</span>
+            <h3 class="exp-card__title">Marvin Constantino Portfolio</h3>
+            <p class="exp-card__subtitle">Multi-Media Artist Portfolio</p>
+            <p>
+              A bold, creative portfolio designed for a fellow Multi-Media Artist. Features a clean layout,
+              smooth section transitions, and a strong focus on showcasing digital art, graphic design, and commissions.
+            </p>
+            <ul class="exp-card__tags">
+              <li>Web Design</li>
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <a class="btn btn--ghost exp-card__cta" href="https://mrvnportfolio.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Site →</a>
           </div>
         </article>
       </div>
