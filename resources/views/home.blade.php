@@ -208,6 +208,11 @@
             <li>HTML</li>
             <li>CSS</li>
             <li>SQL</li>
+            <li>C++</li>
+            <li>C#</li>
+            <li>Python</li>
+            <li>Laravel</li>
+            <li>Java</li>
           </ul>
         </div>
       </div>
