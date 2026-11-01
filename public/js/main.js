@@ -407,6 +407,421 @@
     if (e.key === 'ArrowRight') stepLightbox(1);
   });
 
+  /* ---------- Projects page ---------- */
+  var projectsGrid = document.getElementById('projectsGrid');
+  var projectModal = document.getElementById('projectModal');
+  var projectFilterBtns = document.querySelectorAll('.projects-filter__btn');
+  var projectModalDialog = document.getElementById('projectModalDialog');
+  var projectModalClose = document.getElementById('projectModalClose');
+  var projectModalImg = document.getElementById('projectModalImg');
+  var projectModalPrev = document.getElementById('projectModalPrev');
+  var projectModalNext = document.getElementById('projectModalNext');
+  var projectModalCounter = document.getElementById('projectModalCounter');
+  var projectModalTitle = document.getElementById('projectModalTitle');
+  var projectModalDesc = document.getElementById('projectModalDesc');
+  var projectModalTech = document.getElementById('projectModalTech');
+  var projectModalLive = document.getElementById('projectModalLive');
+  var projectModalGithub = document.getElementById('projectModalGithub');
+  var activeProject = null;
+  var activeProjectImage = 0;
+  var projectModalTrigger = null;
+
+  var projectsData = [
+    {
+      id: 'abraquest',
+      title: 'Capstone Project — System Designer',
+      category: 'games',
+      tag: 'Game',
+      description: 'Designing the core gameplay systems of a 2D RPG — combat, progression, quest structure, and player economy. Turning scattered mechanics into a coherent system that keeps the game balanced and fun.',
+      tech: ['Game Design', 'System & Balance', '2D RPG'],
+      images: [
+        'images/screenshots/abraquest/abraquest1.png',
+        'images/screenshots/abraquest/abraquest2.png',
+        'images/screenshots/abraquest/abraquest3.png',
+        'images/screenshots/abraquest/abraquest4.png',
+        'images/screenshots/abraquest/abraquest5.png',
+        'images/screenshots/abraquest/abraquest6.png'
+      ],
+      liveLink: '',
+      githubLink: ''
+    },
+    {
+      id: 'wedding-rsvp',
+      title: 'Jefrey & Kristine — Wedding RSVP',
+      category: 'web',
+      tag: 'Web App',
+      description: 'Built a wedding invitation and RSVP site from scratch for a real client couple, covering the visual design and the front-end build so their guests can RSVP in a few taps on any device.',
+      tech: ['Web Design', 'HTML', 'CSS', 'JavaScript'],
+      images: ['images/screenshots/rsvp.png'],
+      liveLink: 'https://jefrey-kristine-wedding-rsvp.vercel.app/',
+      githubLink: ''
+    },
+    {
+      id: 'bangued-ka-fuel',
+      title: 'Bangued-Ka-Fuel',
+      category: 'web',
+      tag: 'Web App',
+      description: 'An interactive map that locates gas stations within Bangued, Abra. Built to help locals and travelers find fuel stations by brand — Shell, Caltex, Petron, Phoenix, and more — with a filterable legend and OpenStreetMap layers.',
+      tech: ['Web App', 'Maps', 'HTML', 'CSS', 'JavaScript'],
+      images: ['images/screenshots/gasAbra.png'],
+      liveLink: 'https://bangued-ka-fuel.infinityfree.me/',
+      githubLink: ''
+    },
+    {
+      id: 'artflow',
+      title: 'Artflow',
+      category: 'apps',
+      tag: 'Mobile App',
+      description: 'A cross-platform mobile application built with Flutter designed to help users organize their daily tasks and schedule their time efficiently.',
+      tech: ['Flutter', 'Dart', 'Mobile App', 'Task Management'],
+      images: [
+        'images/screenshots/artflow/artflow1.jpe',
+        'images/screenshots/artflow/artflow2.jpe',
+        'images/screenshots/artflow/artflow3.jpe',
+        'images/screenshots/artflow/artflow4.jpe',
+        'images/screenshots/artflow/artflow5.jpe',
+        'images/screenshots/artflow/artflow6.jpe',
+        'images/screenshots/artflow/artflow7.jpe'
+      ],
+      liveLink: '',
+      githubLink: ''
+    },
+    {
+      id: 'sketchpad',
+      title: 'Sketch Pad',
+      category: 'apps',
+      tag: 'Web Tool',
+      description: 'A custom drawing tool built with vanilla JavaScript and Canvas API. Features pen, eraser, bucket, opacity, Pickr color integration, undo, and a 3-min challenge mode.',
+      tech: ['Canvas API', 'JavaScript', 'HTML', 'CSS'],
+      images: ['images/screenshots/sketchpad.svg'],
+      liveLink: '',
+      detailsLink: 'playground/sketchpad.html',
+      githubLink: ''
+    },
+    {
+      id: 'pixelart',
+      title: 'Pixel Art Editor',
+      category: 'apps',
+      tag: 'Web Tool',
+      description: 'A lightweight pixel art editor built from scratch. Features pencil, eraser, fill, custom color picker, and PNG export.',
+      tech: ['JavaScript', 'Canvas API', 'CSS Grid'],
+      images: ['images/screenshots/pixelart.svg'],
+      liveLink: '',
+      detailsLink: 'playground/pixelart.html',
+      githubLink: ''
+    },
+    {
+      id: 'jlc-duper',
+      title: 'JLC Duper',
+      category: 'games',
+      tag: 'Game Mod',
+      description: "A late-game machine capable of duplicating items, powered by the Ender Dragon's Heart. Features a custom GUI, animated progress, custom textures, and the 'Double or Nothing' advancement.",
+      tech: ['Java', 'Fabric', 'Minecraft', 'Game Dev'],
+      images: [
+        'images/screenshots/JLC Duper/jlcThumbnail.svg',
+        'images/screenshots/JLC Duper/jlc2.png',
+        'images/screenshots/JLC Duper/jlc3.png',
+        'images/screenshots/JLC Duper/jlc4.png',
+        'images/screenshots/JLC Duper/jlc5.png',
+        'images/screenshots/JLC Duper/jlc6.png'
+      ],
+      liveLink: '',
+      githubLink: 'https://github.com/justinecancio06-hub/jlc-duper-mod'
+    },
+    {
+      id: 'aether-dimension',
+      title: 'Aether Dimension',
+      category: 'games',
+      tag: 'Game Mod',
+      description: 'An under-development Fabric mod that adds a brand new Aether dimension. Features a custom Glowstone portal system, a fixed daytime sky, and new items like the Spectro and Prismarine X Shard.',
+      tech: ['Java', 'Fabric', 'Minecraft', 'Game Dev'],
+      images: ['images/screenshots/JLC Duper/jlcThumbnail.svg'],
+      liveLink: '',
+      githubLink: 'https://github.com/justinecancio06-hub/Aether-Dimension-Cancio'
+    },
+    {
+      id: 'whitney-portfolio',
+      title: 'Whitney Tulan Portfolio',
+      category: 'web',
+      tag: 'Website',
+      description: 'A clean, modern portfolio website designed and developed for a Civil Engineer. Built with a focus on readability, clean typography, and a smooth user experience.',
+      tech: ['Web Design', 'HTML', 'CSS', 'JavaScript'],
+      images: ['images/screenshots/whitney-portfolio.png'],
+      liveLink: 'https://whitney-tulan-portfolio.vercel.app/',
+      githubLink: ''
+    },
+    {
+      id: 'marvin-portfolio',
+      title: 'Marvin Constantino Portfolio',
+      category: 'web',
+      tag: 'Website',
+      description: 'A bold, creative portfolio designed for a fellow Multi-Media Artist. Features a clean layout, smooth section transitions, and a strong focus on showcasing digital art, graphic design, and commissions.',
+      tech: ['Web Design', 'HTML', 'CSS', 'JavaScript'],
+      images: ['images/screenshots/marvin-portfolio.png'],
+      liveLink: 'https://mrvnportfolio.vercel.app/',
+      githubLink: ''
+    }
+  ];
+
+  function isExternalLink(url) {
+    return /^https?:\/\//i.test(url);
+  }
+
+  function setLinkTarget(link, url) {
+    if (isExternalLink(url)) {
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+    } else {
+      link.removeAttribute('target');
+      link.removeAttribute('rel');
+    }
+  }
+
+  function createProjectCard(project) {
+    var card = document.createElement('article');
+    card.className = 'project-card';
+    card.setAttribute('data-category', project.category);
+
+    var media = document.createElement('div');
+    media.className = 'project-card__media';
+
+    var img = document.createElement('img');
+    img.src = project.images[0];
+    img.alt = project.title + ' preview';
+    img.loading = 'lazy';
+    img.decoding = 'async';
+
+    var tag = document.createElement('span');
+    tag.className = 'project-card__tag';
+    tag.textContent = project.tag;
+
+    media.appendChild(img);
+    media.appendChild(tag);
+
+    var body = document.createElement('div');
+    body.className = 'project-card__body';
+
+    var title = document.createElement('h3');
+    title.className = 'project-card__title';
+    title.textContent = project.title;
+
+    var desc = document.createElement('p');
+    desc.className = 'project-card__desc';
+    desc.textContent = project.description;
+
+    var tech = document.createElement('ul');
+    tech.className = 'project-card__tech';
+    project.tech.forEach(function (item) {
+      var li = document.createElement('li');
+      li.textContent = item;
+      tech.appendChild(li);
+    });
+
+    body.appendChild(title);
+    body.appendChild(desc);
+    body.appendChild(tech);
+
+    if (project.liveLink || project.githubLink) {
+      var actions = document.createElement('div');
+      actions.className = 'project-card__actions';
+
+      if (project.liveLink) {
+        var live = document.createElement('a');
+        live.className = 'btn btn--ghost project-card__action';
+        live.href = project.liveLink;
+        live.textContent = 'Live Demo';
+        setLinkTarget(live, project.liveLink);
+        actions.appendChild(live);
+      }
+
+      if (project.githubLink) {
+        var github = document.createElement('a');
+        github.className = 'btn btn--ghost project-card__action';
+        github.href = project.githubLink;
+        github.textContent = 'GitHub';
+        setLinkTarget(github, project.githubLink);
+        actions.appendChild(github);
+      }
+
+      body.appendChild(actions);
+    }
+
+    var details;
+
+    if (project.detailsLink) {
+      details = document.createElement('a');
+      details.className = 'project-card__details';
+      details.href = project.detailsLink;
+      details.textContent = 'Live Demo \u2192';
+      setLinkTarget(details, project.detailsLink);
+    } else {
+      details = document.createElement('button');
+      details.type = 'button';
+      details.className = 'project-card__details';
+      details.textContent = 'View Details & Screenshots \u2192';
+      details.addEventListener('click', function () {
+        projectModalTrigger = details;
+        openProjectModal(project);
+      });
+    }
+
+    body.appendChild(details);
+
+    card.appendChild(media);
+    card.appendChild(body);
+    return card;
+  }
+
+  function renderProjects() {
+    if (!projectsGrid) return;
+    var frag = document.createDocumentFragment();
+    projectsData.forEach(function (project) {
+      frag.appendChild(createProjectCard(project));
+    });
+    projectsGrid.innerHTML = '';
+    projectsGrid.appendChild(frag);
+  }
+
+  function filterProjects(filter) {
+    if (!projectsGrid) return;
+    projectsGrid.querySelectorAll('.project-card').forEach(function (card) {
+      card.hidden = filter !== 'all' && card.getAttribute('data-category') !== filter;
+    });
+  }
+
+  function setProjectFilter(filter) {
+    projectFilterBtns.forEach(function (btn) {
+      var active = btn.getAttribute('data-filter') === filter;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', String(active));
+    });
+    filterProjects(filter);
+  }
+
+  function renderProjectModalImage() {
+    if (!activeProject) return;
+    var total = activeProject.images.length;
+    projectModalImg.src = activeProject.images[activeProjectImage];
+    projectModalImg.alt = activeProject.title + ' screenshot ' + (activeProjectImage + 1);
+    projectModalCounter.textContent = (activeProjectImage + 1) + ' / ' + total;
+    projectModalPrev.hidden = total <= 1;
+    projectModalNext.hidden = total <= 1;
+  }
+
+  function openProjectModal(project) {
+    if (!projectModal) return;
+    activeProject = project;
+    activeProjectImage = 0;
+
+    projectModalTitle.textContent = project.title;
+    projectModalDesc.textContent = project.description;
+
+    projectModalTech.innerHTML = '';
+    project.tech.forEach(function (item) {
+      var li = document.createElement('li');
+      li.textContent = item;
+      projectModalTech.appendChild(li);
+    });
+
+    if (project.liveLink) {
+      projectModalLive.href = project.liveLink;
+      projectModalLive.hidden = false;
+      setLinkTarget(projectModalLive, project.liveLink);
+    } else {
+      projectModalLive.hidden = true;
+      projectModalLive.removeAttribute('href');
+    }
+
+    if (project.githubLink) {
+      projectModalGithub.href = project.githubLink;
+      projectModalGithub.hidden = false;
+      setLinkTarget(projectModalGithub, project.githubLink);
+    } else {
+      projectModalGithub.hidden = true;
+      projectModalGithub.removeAttribute('href');
+    }
+
+    renderProjectModalImage();
+    projectModal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    projectModalClose.focus();
+  }
+
+  function closeProjectModal() {
+    if (!projectModal || projectModal.hidden) return;
+    projectModal.hidden = true;
+    document.body.style.overflow = '';
+    activeProject = null;
+    if (projectModalTrigger && projectModalTrigger.focus) projectModalTrigger.focus();
+    projectModalTrigger = null;
+  }
+
+  function stepProjectImage(direction) {
+    if (!activeProject) return;
+    var total = activeProject.images.length;
+    if (total <= 1) return;
+    activeProjectImage = (activeProjectImage + direction + total) % total;
+    renderProjectModalImage();
+  }
+
+  if (projectsGrid && projectModal && projectModalDialog) {
+    renderProjects();
+    setProjectFilter('all');
+
+    projectFilterBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        setProjectFilter(btn.getAttribute('data-filter'));
+      });
+    });
+
+    projectModalClose.addEventListener('click', closeProjectModal);
+    projectModalPrev.addEventListener('click', function () { stepProjectImage(-1); });
+    projectModalNext.addEventListener('click', function () { stepProjectImage(1); });
+
+    projectModal.addEventListener('click', function (e) {
+      if (e.target === projectModal) closeProjectModal();
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (projectModal.hidden) return;
+
+      if (e.key === 'Escape') {
+        e.preventDefault();
+        closeProjectModal();
+        return;
+      }
+
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        stepProjectImage(-1);
+        return;
+      }
+
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        stepProjectImage(1);
+        return;
+      }
+
+      if (e.key === 'Tab') {
+        var focusables = projectModalDialog.querySelectorAll('a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])');
+        var visible = Array.prototype.filter.call(focusables, function (el) {
+          return !el.hidden && el.offsetParent !== null;
+        });
+        if (!visible.length) return;
+        var first = visible[0];
+        var last = visible[visible.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
+  }
+
   /* ---------- Nav ---------- */
   var nav = document.getElementById('nav');
   var navToggle = document.getElementById('navToggle');

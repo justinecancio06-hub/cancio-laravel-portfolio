@@ -64,240 +64,43 @@
         <p class="projects__lead">A closer look at the games, websites, and apps I've been building.</p>
       </div>
 
-      <div class="exp-grid" id="tools">
-        <article class="exp-card">
-          <div class="exp-card__media">
-            <img src="images/screenshots/abraquest.png" data-lightbox="images/screenshots/abraquest.png" alt="Screenshot of the 2D RPG capstone game project" loading="eager" tabindex="0" role="button" />
-          </div>
-          <div class="exp-card__body">
-            <span class="exp-card__badge">2025 — Present</span>
-            <span class="exp-card__badge">Under Development</span>
-            <h3 class="exp-card__title">Capstone Project — System Designer</h3>
-            <p class="exp-card__subtitle">2D RPG System Game</p>
-            <p>
-              Designing the core gameplay systems of a 2D RPG — combat, progression,
-              quest structure, and player economy. Turning scattered mechanics into a
-              coherent system that keeps the game balanced and fun.
-            </p>
-            <ul class="exp-card__tags">
-              <li>Game Design</li>
-              <li>System &amp; Balance</li>
-              <li>2D RPG</li>
-            </ul>
-          </div>
-        </article>
+      <div id="tools">
+        <div class="projects-filter" role="group" aria-label="Filter projects">
+          <button type="button" class="projects-filter__btn is-active" data-filter="all" aria-pressed="true">All</button>
+          <button type="button" class="projects-filter__btn" data-filter="web" aria-pressed="false">Web Projects</button>
+          <button type="button" class="projects-filter__btn" data-filter="games" aria-pressed="false">Games</button>
+          <button type="button" class="projects-filter__btn" data-filter="apps" aria-pressed="false">Apps</button>
+        </div>
 
-        <article class="exp-card">
-          <div class="exp-card__media">
-            <a href="https://jefrey-kristine-wedding-rsvp.vercel.app/" target="_blank" rel="noopener noreferrer">
-              <img src="images/screenshots/rsvp.png" alt="Jefrey &amp; Kristine Wedding RSVP website preview" loading="lazy" decoding="async" />
-            </a>
-          </div>
-          <div class="exp-card__body">
-            <span class="exp-card__badge">Client Commission</span>
-            <span class="exp-card__badge">Under Development</span>
-            <h3 class="exp-card__title">Jefrey &amp; Kristine &mdash; Wedding RSVP</h3>
-            <p class="exp-card__subtitle">Custom Invitation &amp; RSVP Website</p>
-            <p>
-              Built a wedding invitation and RSVP site from scratch for a real client couple,
-              covering the visual design and the front-end build so their guests can RSVP in
-              a few taps on any device.
-            </p>
-            <ul class="exp-card__tags">
-              <li>Web Design</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-            </ul>
-            <a class="btn btn--ghost exp-card__cta" href="https://jefrey-kristine-wedding-rsvp.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Site →</a>
-          </div>
-        </article>
-
-        <article class="exp-card">
-          <div class="exp-card__media">
-            <a href="https://bangued-ka-fuel.infinityfree.me/" target="_blank" rel="noopener noreferrer">
-              <img src="images/screenshots/gasAbra.png" alt="Bangued-Ka-Fuel gas station map preview" loading="lazy" decoding="async" />
-            </a>
-          </div>
-          <div class="exp-card__body">
-            <span class="exp-card__badge">Personal Project</span>
-            <span class="exp-card__badge">Under Development</span>
-            <h3 class="exp-card__title">Bangued-Ka-Fuel</h3>
-            <p class="exp-card__subtitle">Gas Station Map Finder</p>
-            <p>
-              An interactive map that locates gas stations within Bangued, Abra. Built to help
-              locals and travelers find fuel stations by brand &mdash; Shell, Caltex, Petron,
-              Phoenix, and more &mdash; with a filterable legend and OpenStreetMap layers.
-            </p>
-            <ul class="exp-card__tags">
-              <li>Web App</li>
-              <li>Maps</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-            </ul>
-            <a class="btn btn--ghost exp-card__cta" href="https://bangued-ka-fuel.infinityfree.me/" target="_blank" rel="noopener noreferrer">View Live Site →</a>
-          </div>
-        </article>
-
-        <article class="exp-card">
-          <div class="exp-card__media exp-card__media--portrait">
-            <img src="images/screenshots/Flutter.jpe" data-lightbox="images/screenshots/Flutter.jpe" alt="Artflow task scheduling mobile app screenshot" loading="lazy" decoding="async" tabindex="0" role="button" />
-          </div>
-          <div class="exp-card__body">
-            <span class="exp-card__badge">Personal Project</span>
-            <h3 class="exp-card__title">Artflow</h3>
-            <p class="exp-card__subtitle">Task Scheduling Mobile App</p>
-            <p>
-              A cross-platform mobile application built with Flutter designed to help users
-              organize their daily tasks and schedule their time efficiently.
-            </p>
-            <ul class="exp-card__tags">
-              <li>Flutter</li>
-              <li>Dart</li>
-              <li>Mobile App</li>
-              <li>Task Management</li>
-            </ul>
-          </div>
-        </article>
-
-        <article class="exp-card">
-          <div class="exp-card__media">
-            <a href="playground/sketchpad.html">
-              <img src="images/screenshots/sketchpad.svg" alt="Sketch Pad drawing tool preview" loading="lazy" decoding="async" />
-            </a>
-          </div>
-          <div class="exp-card__body">
-            <span class="exp-card__badge">Web Tool</span>
-            <h3 class="exp-card__title">Sketch Pad</h3>
-            <p class="exp-card__subtitle">Interactive Canvas App</p>
-            <p>
-              A custom drawing tool built with vanilla JavaScript and Canvas API. Features pen,
-              eraser, bucket, opacity, Pickr color integration, undo, and a 3-min challenge mode.
-            </p>
-            <ul class="exp-card__tags">
-              <li>Canvas API</li>
-              <li>JavaScript</li>
-              <li>HTML</li>
-              <li>CSS</li>
-            </ul>
-            <a class="btn btn--ghost exp-card__cta" href="playground/sketchpad.html">Launch Tool →</a>
-          </div>
-        </article>
-
-        <article class="exp-card">
-          <div class="exp-card__media">
-            <a href="playground/pixelart.html">
-              <img src="images/screenshots/pixelart.svg" alt="Pixel Art Editor preview" loading="lazy" decoding="async" />
-            </a>
-          </div>
-          <div class="exp-card__body">
-            <span class="exp-card__badge">Web Tool</span>
-            <h3 class="exp-card__title">Pixel Art Editor</h3>
-            <p class="exp-card__subtitle">16x16 Grid Painter</p>
-            <p>
-              A lightweight pixel art editor built from scratch. Features pencil, eraser, fill,
-              custom color picker, and PNG export.
-            </p>
-            <ul class="exp-card__tags">
-              <li>JavaScript</li>
-              <li>Canvas API</li>
-              <li>CSS Grid</li>
-            </ul>
-            <a class="btn btn--ghost exp-card__cta" href="playground/pixelart.html">Launch Tool →</a>
-          </div>
-        </article>
-
-        <article class="exp-card">
-          <div class="exp-card__media">
-            <img src="images/screenshots/Minecraft_iMod_JLC.svg" alt="JLC Duper Fabric mod for Minecraft 26.2" loading="lazy" decoding="async" />
-          </div>
-          <div class="exp-card__body">
-            <span class="exp-card__badge">Java Modding</span>
-            <h3 class="exp-card__title">JLC Duper</h3>
-            <p class="exp-card__subtitle">Fabric Mod for Minecraft 26.2</p>
-            <p>
-              A late-game machine capable of duplicating items, powered by the Ender Dragon's
-              Heart. Features a custom GUI, animated progress, custom textures, and the
-              'Double or Nothing' advancement.
-            </p>
-            <ul class="exp-card__tags">
-              <li>Java</li>
-              <li>Fabric</li>
-              <li>Minecraft</li>
-              <li>Game Dev</li>
-            </ul>
-            <a class="btn btn--ghost exp-card__cta" href="https://github.com/justinecancio06-hub/jlc-duper-mod" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </div>
-        </article>
-
-        <article class="exp-card">
-          <div class="exp-card__media">
-            <img src="images/screenshots/Minecraft_iMod_JLC.svg" alt="Aether Dimension Fabric mod for Minecraft 26.1" loading="lazy" decoding="async" />
-          </div>
-          <div class="exp-card__body">
-            <span class="exp-card__badge">In Development</span>
-            <h3 class="exp-card__title">Aether Dimension</h3>
-            <p class="exp-card__subtitle">Fabric Mod for Minecraft 26.1</p>
-            <p>
-              An under-development Fabric mod that adds a brand new Aether dimension. Features a custom Glowstone portal system, a fixed daytime sky, and new items like the Spectro and Prismarine X Shard.
-            </p>
-            <ul class="exp-card__tags">
-              <li>Java</li>
-              <li>Fabric</li>
-              <li>Minecraft</li>
-              <li>Game Dev</li>
-            </ul>
-            <a class="btn btn--ghost exp-card__cta" href="https://github.com/justinecancio06-hub/Aether-Dimension-Cancio" target="_blank" rel="noopener noreferrer">View on GitHub</a>
-          </div>
-        </article>
-
-        <article class="exp-card">
-          <div class="exp-card__media">
-            <img src="images/screenshots/whitney-portfolio.png" alt="Whitney Tulan Portfolio website preview" loading="lazy" decoding="async" />
-          </div>
-          <div class="exp-card__body">
-            <span class="exp-card__badge">Client Project</span>
-            <h3 class="exp-card__title">Whitney Tulan Portfolio</h3>
-            <p class="exp-card__subtitle">Civil Engineer Portfolio Website</p>
-            <p>
-              A clean, modern portfolio website designed and developed for a Civil Engineer. Built with a
-              focus on readability, clean typography, and a smooth user experience.
-            </p>
-            <ul class="exp-card__tags">
-              <li>Web Design</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-            </ul>
-            <a class="btn btn--ghost exp-card__cta" href="https://whitney-tulan-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Site →</a>
-          </div>
-        </article>
-
-        <article class="exp-card">
-          <div class="exp-card__media">
-            <img src="images/screenshots/marvin-portfolio.png" alt="Marvin Constantino Portfolio website preview" loading="lazy" decoding="async" />
-          </div>
-          <div class="exp-card__body">
-            <span class="exp-card__badge">Client Project</span>
-            <h3 class="exp-card__title">Marvin Constantino Portfolio</h3>
-            <p class="exp-card__subtitle">Multi-Media Artist Portfolio</p>
-            <p>
-              A bold, creative portfolio designed for a fellow Multi-Media Artist. Features a clean layout,
-              smooth section transitions, and a strong focus on showcasing digital art, graphic design, and commissions.
-            </p>
-            <ul class="exp-card__tags">
-              <li>Web Design</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-            </ul>
-            <a class="btn btn--ghost exp-card__cta" href="https://mrvnportfolio.vercel.app/" target="_blank" rel="noopener noreferrer">View Live Site →</a>
-          </div>
-        </article>
+        <div class="projects-grid" id="projectsGrid"></div>
       </div>
     </div>
   </main>
+
+  <!-- PROJECT MODAL -->
+  <div class="project-modal" id="projectModal" hidden>
+    <div class="project-modal__dialog" id="projectModalDialog" role="dialog" aria-modal="true" aria-labelledby="projectModalTitle">
+      <button class="project-modal__close" id="projectModalClose" type="button" aria-label="Close project details">&#10005;</button>
+
+      <div class="project-modal__carousel">
+        <img class="project-modal__img" id="projectModalImg" src="" alt="" />
+        <button class="project-modal__nav project-modal__nav--prev" id="projectModalPrev" type="button" aria-label="Previous screenshot">&#8249;</button>
+        <button class="project-modal__nav project-modal__nav--next" id="projectModalNext" type="button" aria-label="Next screenshot">&#8250;</button>
+        <span class="project-modal__counter" id="projectModalCounter" aria-live="polite">1 / 1</span>
+      </div>
+
+      <div class="project-modal__content">
+        <h2 class="project-modal__title" id="projectModalTitle"></h2>
+        <p class="project-modal__label">About this project</p>
+        <p class="project-modal__desc" id="projectModalDesc"></p>
+        <ul class="project-modal__tech" id="projectModalTech"></ul>
+        <div class="project-modal__links">
+          <a class="btn btn--primary" id="projectModalLive" href="#">Live Demo</a>
+          <a class="btn btn--ghost" id="projectModalGithub" href="#">GitHub Repository</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- LIGHTBOX -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden>

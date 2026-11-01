@@ -269,7 +269,7 @@
         <div class="exp-grid">
         <article class="exp-card">
           <div class="exp-card__media">
-            <img src="images/screenshots/abraquest.png" data-lightbox="images/screenshots/abraquest.png" alt="Screenshot of the 2D RPG capstone game project" loading="eager" tabindex="0" role="button" />
+            <img src="images/screenshots/abraquest/abraquest1.png" data-lightbox="images/screenshots/abraquest/abraquest1.png" alt="Screenshot of the 2D RPG capstone game project" loading="eager" tabindex="0" role="button" />
           </div>
           <div class="exp-card__body">
             <span class="exp-card__badge">2025 — Present</span>
