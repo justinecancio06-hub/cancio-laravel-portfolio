@@ -286,6 +286,9 @@
               <li>System &amp; Balance</li>
               <li>2D RPG</li>
             </ul>
+            <div class="exp-card__actions">
+              <a class="btn btn--ghost exp-card__cta" href="{{ url('projects') }}#abraquest">Details &amp; Screenshots →</a>
+            </div>
           </div>
         </article>
 
@@ -311,6 +314,9 @@
               <li>CSS</li>
               <li>JavaScript</li>
             </ul>
+            <div class="exp-card__actions">
+              <a class="btn btn--ghost exp-card__cta" href="{{ url('projects') }}#wedding-rsvp">Details &amp; Screenshots →</a>
+            </div>
           </div>
         </article>
 
@@ -337,27 +343,34 @@
               <li>CSS</li>
               <li>JavaScript</li>
             </ul>
+            <div class="exp-card__actions">
+              <a class="btn btn--ghost exp-card__cta" href="{{ url('projects') }}#bangued-ka-fuel">Details &amp; Screenshots →</a>
+            </div>
           </div>
         </article>
 
         <article class="exp-card">
-          <div class="exp-card__media exp-card__media--portrait">
-            <img src="images/screenshots/Flutter.jpe" data-lightbox="images/screenshots/Flutter.jpe" alt="Artflow task scheduling mobile app screenshot" loading="lazy" decoding="async" tabindex="0" role="button" />
+          <div class="exp-card__media">
+            <img src="images/screenshots/JLC Duper/jlcThumbnail.svg" alt="JLC Duper Minecraft mod preview" loading="lazy" decoding="async" />
           </div>
           <div class="exp-card__body">
             <span class="exp-card__badge">Personal Project</span>
-            <h3 class="exp-card__title">Artflow</h3>
-            <p class="exp-card__subtitle">Task Scheduling Mobile App</p>
+            <span class="exp-card__badge">In Development</span>
+            <h3 class="exp-card__title">JLC Duper</h3>
+            <p class="exp-card__subtitle">Fabric Mod for Minecraft 26.2</p>
             <p>
-              A cross-platform mobile application built with Flutter designed to help users
-              organize their daily tasks and schedule their time efficiently.
+              A custom Minecraft Fabric mod that adds a late-game duplication machine powered by the Ender Dragon's Heart, with a custom GUI and advancement.
             </p>
             <ul class="exp-card__tags">
-              <li>Flutter</li>
-              <li>Dart</li>
-              <li>Mobile App</li>
-              <li>Task Management</li>
+              <li>Java</li>
+              <li>Fabric</li>
+              <li>Minecraft</li>
+              <li>Game Dev</li>
             </ul>
+            <div class="exp-card__actions">
+              <a class="btn btn--ghost exp-card__cta" href="{{ url('projects') }}#jlc-duper">Details &amp; Screenshots →</a>
+              <a class="btn btn--ghost exp-card__cta" href="https://github.com/justinecancio06-hub/jlc-duper-mod" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+            </div>
           </div>
         </article>
         </div>

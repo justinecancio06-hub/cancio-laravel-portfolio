@@ -518,6 +518,7 @@
       description: "A late-game machine capable of duplicating items, powered by the Ender Dragon's Heart. Features a custom GUI, animated progress, custom textures, and the 'Double or Nothing' advancement.",
       tech: ['Java', 'Fabric', 'Minecraft', 'Game Dev'],
       images: [
+        'images/screenshots/JLC Duper/jlc1.png',
         'images/screenshots/JLC Duper/jlcThumbnail.svg',
         'images/screenshots/JLC Duper/jlc2.png',
         'images/screenshots/JLC Duper/jlc3.png',
@@ -658,7 +659,7 @@
       details = document.createElement('button');
       details.type = 'button';
       details.className = 'project-card__details';
-      details.textContent = 'View Details & Screenshots \u2192';
+      details.textContent = 'Details & Screenshots';
       details.addEventListener('click', function () {
         projectModalTrigger = details;
         openProjectModal(project);
@@ -767,6 +768,20 @@
   if (projectsGrid && projectModal && projectModalDialog) {
     renderProjects();
     setProjectFilter('all');
+
+    var initialHash = window.location.hash.replace(/^#/, '');
+    if (initialHash) {
+      var initialProject = null;
+      for (var hashIndex = 0; hashIndex < projectsData.length; hashIndex++) {
+        if (projectsData[hashIndex].id === initialHash) {
+          initialProject = projectsData[hashIndex];
+          break;
+        }
+      }
+      if (initialProject) {
+        openProjectModal(initialProject);
+      }
+    }
 
     projectFilterBtns.forEach(function (btn) {
       btn.addEventListener('click', function () {
