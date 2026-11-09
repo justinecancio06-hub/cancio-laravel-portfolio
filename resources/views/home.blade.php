@@ -20,7 +20,7 @@
       document.documentElement.classList.toggle('light-theme', theme === 'light');
     })();
   </script>
-  <link rel="stylesheet" href="css/style.css?v=20261128" />
+  <link rel="stylesheet" href="css/style.css?v=20261130" />
 </head>
 <body>
   <div id="preloader">
